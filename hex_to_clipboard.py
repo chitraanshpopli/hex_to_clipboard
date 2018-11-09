@@ -7,7 +7,6 @@ import pyautogui
 
 def rgb_to_hex(r,g,b):
 	#Converts individual rgb values (decimal) to individual rgb values (hex). 
-	print('hex r == ' + hex(r))
 	Hr = hex(r)[2:]
 	Hg = hex(g)[2:]
 	Hb = hex(b)[2:]
@@ -45,8 +44,9 @@ def get_hex_value():
 	
 	#Exit the program by scanning white pixel (hex -- 'ffffff') 
 	global exit_value
-	if exit_value == '':
+	if exit_value != '1':
 		if hex_value == 'ffffff':
+			print('\nWhite pixel. Quiting.')
 			exit()
 	print('Hex value copied to clipboard - ' + hex_value)
 	return hex_value
